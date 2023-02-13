@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head><style>
+        fieldset {
+  background-color: #dab36b;
+}
+body{
+    background-image: url(https://www.mdfarmbureau.com/wp-content/uploads/2020/01/AdobeStock_125235891.jpg);
+    background-repeat: no-repeat;
+    background-size: 2000px 1000px;
+}
+
+.button {
+  background-color: #b3885e; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+    </style>
+        <script>
+            function graduatescholar(){
+                
+                var age = document.getElementById("age").value;
+                var income = document.getElementById("income").value;
+                var ele = document.getElementsByName("Gender");
+                for(i = 0; i < ele.length; i++) {
+                    if(ele[i].checked){
+                        var gender = ele[i].value;
+                    }
+                }
+                var ele1 = document.getElementsByName("current");
+                for(i = 0; i < ele1.length; i++) {
+                    if(ele1[i].checked){
+                        var current = ele1[i].value;
+                    }
+                }
+                selectElement = document.querySelector("#college");
+                var college = selectElement.value;
+                var inter = document.getElementById("12_p").value;
+                selectElement = document.querySelector("#p_govt");
+                var p_govt = selectElement.value;
+                selectElement = document.querySelector("#caste");
+                var caste = selectElement.value;
+                selectElement = document.querySelector("#phd");
+                var phd = selectElement.value;
+                if(Number(age) > 18 && Number(inter) > 80 && p_govt == "no" && income < 300000 && current == "ug" ){
+                    document.getElementById("result").innerHTML = "jagananna vidyadeevana"+"jagananna vasathi deevana";
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <center id = "result"><h1>Form for Graduation Students</h1></center>
+        <br><br><br><br>
+        <center><fieldset style = "height:fit-content; width:fit-content;">
+            <form  id="primary">
+                <table align = "center">
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" placeholder="Enter your name"></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Age</td>
+                        <td ><input id = "age" type="text" name = "age" placeholder="Enter your age"></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Family Income</td>
+                        <td ><input id="income" type="text" name = "age" placeholder="Enter your family income"></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td><input type = "radio" name = "Gender" value = "male">Male</td>
+                        <td><input type = "radio" name = "Gender" value = "female">Female</td>     
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Type of College</td>
+                        <td>
+                            <select id="college">
+                                <option value = "-1">Select your school type</option>
+                                <option value="govt">Government School</option>
+                                <option value = "pvt">Private School</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>12th percentage</td>
+                        <td><input id = "12_p" type = "text"></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Program that you are currently enrolled</td>
+                        <td><input type = "radio" name = "current" value = "ug">UnderGraduate</td>
+                        <td><input type = "radio" name = "current" value = "pg">PostGraduate</td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Anyone of your parents working in government sector</td>
+                        <td>
+                            <select id="p_govt">
+                                <option value = "-1">Select Yes/No</option>
+                                <option value = "yes">YES</option>
+                                <option value = "no">NO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Caste</td>
+                        <td>
+                            <select id="caste">
+                                <option value = "-1">Select your caste</option>
+                                <option value = "oc">OC</option>
+                                <option value = "bc">BC</option>
+                                <option value = "sc">SC</option>
+                                <option value= "st">ST</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Physically Disabled</td>
+                        <td>
+                            <select id="phd">
+                                <option value="-1"></option>
+                                <option value="pd">YES</option>
+                                <option value="npd">NO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <center>
+                            <table><tr>
+                                <td><button value = "submit" class = "button" onclick = "graduatescholar()">submit</button></td>
+                            </tr></table>
+                        </center>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                </table>
+            </form>
+        </fieldset></center>
+    </body>
+</html>
